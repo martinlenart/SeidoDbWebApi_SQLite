@@ -1,0 +1,3 @@
+###  Weather API service
+GET  https://api.openweathermap.org/data/2.5/forecast?q=Stockholm&units=metric&lang=en&appid=eee86395bdce14b3d962d5956193d800
+

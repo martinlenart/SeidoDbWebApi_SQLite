@@ -1,0 +1,42 @@
+### GetCustomers
+GET https://localhost:5001/api/customers
+
+### GetCustomer
+GET https://localhost:5001/api/customers/64904ac4-5b90-486b-9a33-1a794af29f85
+
+### UpdateCustomer
+PUT https://localhost:5001/api/customers/64904ac4-5b90-486b-9a33-1a794af29f85 HTTP/1.1
+Content-Type: application/json
+Content-Length: 276
+
+{
+  "customerID": "64904ac4-5b90-486b-9a33-1a794af29f85",
+  "firstName": "Rickard",
+  "lastName": "Perez",
+  "adress": "Birger Jarlsgatan 36",
+  "zipCode": 96209,
+  "city": "Helsingfors",
+  "country": "Finland",
+  "birthDate": "1955-11-03T00:00:00",
+  "orders": []
+}
+
+### DeleteCustomer
+DELETE https://localhost:5001/api/customers/64904ac4-5b90-486b-9a33-1a794af29f85 HTTP/1.1
+
+### CreateCustomer
+POST https://localhost:5001/api/customers HTTP/1.1
+Content-Type: application/json
+Content-Length: 276
+
+{
+  "customerID": "64904ac4-5b90-486b-9a33-1a794af29f85",
+  "firstName": "Rickard",
+  "lastName": "Perez",
+  "adress": "Birger Jarlsgatan 36",
+  "zipCode": 96209,
+  "city": "Helsingfors",
+  "country": "Finland",
+  "birthDate": "1955-11-03T00:00:00",
+  "orders": []
+}

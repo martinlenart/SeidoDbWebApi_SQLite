@@ -1,0 +1,10 @@
+{
+    "name": "Fluid WebService",
+    "host": "204.14.93.13",
+    "protocol": "ftp",
+    "port": 21,
+    "username": "modusjustus1",
+    "remotePath": "/webservice.lenart.se",
+    "uploadOnSave": true,
+    "password": "q*DLol4rqMe10yms"
+}
