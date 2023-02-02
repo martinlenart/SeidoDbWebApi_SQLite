@@ -29,7 +29,7 @@ namespace DbAppWebApi.Controllers
         public LogController(ILogger<LogController> logger)
         {
             _logger = logger;
-            _logger.LogInformation($"LogController started: {AppConfig.ThisConnection}");
+            _logger.LogInformation($"LogController started: {AppConfig.CurrentDbConnection}");
         }
     }
 }

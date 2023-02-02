@@ -24,14 +24,14 @@ namespace DbAppWebApi.Controllers
         public async Task<DbInfo> Get([FromServices] ILoggerProvider myLogger)
         {
             var info = await _repo.ReadDbInfoAsync();
-            info.dBConnection = AppConfig.ThisConnection;
+            info.dBConnection = AppConfig.CurrentDbConnection;
             return info;
         }
         public IdController(ICustomerRepository repo, ILogger<LogController> logger)
         {
             _repo = repo;
             _logger = logger;
-            _logger.LogInformation($"IdController started: {AppConfig.ThisConnection}");
+            _logger.LogInformation($"IdController started: {AppConfig.CurrentDbConnection}");
         }
     }
 }

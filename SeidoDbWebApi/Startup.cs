@@ -35,9 +35,7 @@ namespace DbAppWebApi
         public void ConfigureServices(IServiceCollection services)
         {
             //Add the DbContext to the services
-            var connectionString = AppConfig.ConfigurationRoot.GetConnectionString(AppConfig.ThisConnection);
-
-            services.AddDbContext<SeidoDbContext>(options => options.UseSqlite(connectionString));
+            services.AddDbContext<SeidoDbContext>(options => options.UseSqlite(AppConfig.CurrentDbConnectionString));
 
             // global cors policy
             services.AddCors();

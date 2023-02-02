@@ -171,7 +171,7 @@ namespace DbAppWebApi.Controllers
             _repo = repo;
             _logger = logger;
 
-            _logger.LogInformation($"CustomersController started. Connected to {AppConfig.ThisConnection}");
+            _logger.LogInformation($"CustomersController started. Connected to {AppConfig.CurrentDbConnection}");
         }
     }
 }

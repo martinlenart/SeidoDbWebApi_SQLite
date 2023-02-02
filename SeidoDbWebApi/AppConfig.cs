@@ -10,7 +10,6 @@ namespace DbAppWebApi
 {
     public sealed class AppConfig
     {
-        public const string ThisConnection = "SQLite_seidowebservice_ws8";
         private static AppConfig _instance = null;
         private static readonly object instanceLock = new();
         private static IConfigurationRoot _configuration;
@@ -24,7 +23,8 @@ namespace DbAppWebApi
         {
             var builder = new ConfigurationBuilder()
                                 .SetBasePath(Directory.GetCurrentDirectory())
-                                .AddJsonFile(_appsettingfile, optional: true, reloadOnChange: true);
+                                .AddJsonFile(_appsettingfile, optional: true, reloadOnChange: true)
+                                .AddUserSecrets("3d2b8454-7957-4457-9167-d64aaaedb8d3"); //Shared on one developer machine
 
             _configuration = builder.Build();
         }
@@ -43,5 +43,9 @@ namespace DbAppWebApi
                 }
             }
         }
+
+        public static string CurrentDbType => ConfigurationRoot.GetValue<string>("CurrentDbType");
+        public static string CurrentDbConnection => ConfigurationRoot.GetValue<string>("CurrentDbConnection");
+        public static string CurrentDbConnectionString => ConfigurationRoot.GetConnectionString(CurrentDbConnection);
     }
 }
